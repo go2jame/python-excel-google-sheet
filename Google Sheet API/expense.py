@@ -1,10 +1,14 @@
 
+import os
 import gspread
 from google.oauth2.service_account import Credentials
 
 sc  = ['https://www.googleapis.com/auth/spreadsheets']
 
-creds = Credentials.from_service_account_file('Google Sheet API/credential.json',scopes=sc)
+# Use the relative path to the credential file
+KEY_PATH = os.path.join(os.path.dirname(__file__), 'credential.json')
+
+creds = Credentials.from_service_account_file(KEY_PATH,scopes=sc)
 client = gspread.authorize(creds)
 
 sheet_id = '1bO74tlBP21qoR3UOJNaWSA0X9iCLlb9PZdUIx14_QaI'
