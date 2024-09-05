@@ -1,3 +1,6 @@
 Google Sheet API/credential.json
 .env
 sample-openai.py
+build/
+dist/
+*.spec
